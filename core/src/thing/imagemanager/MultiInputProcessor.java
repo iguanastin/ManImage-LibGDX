@@ -7,7 +7,7 @@ import java.util.List;
 
 public class MultiInputProcessor implements InputProcessor {
 
-    private List<InputProcessor> processors = new ArrayList();
+    private final List<InputProcessor> processors = new ArrayList<InputProcessor>();
 
     public MultiInputProcessor() {
         Gdx.input.setInputProcessor(this);

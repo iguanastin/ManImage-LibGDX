@@ -5,9 +5,8 @@
  */
 package thing.imagemanager.desktop;
 
+import javax.swing.*;
 import java.io.File;
-import javax.swing.JFileChooser;
-import javax.swing.UIManager;
 
 /**
  *
@@ -104,7 +103,7 @@ public class SetupFrame extends javax.swing.JFrame {
         setEnabled(false);
     }//GEN-LAST:event_acceptButtonActionPerformed
 
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton acceptButton;
     private javax.swing.JButton browseSourceFolderButton;

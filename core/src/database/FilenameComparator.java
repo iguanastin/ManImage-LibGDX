@@ -2,9 +2,6 @@ package database;
 
 import java.util.Comparator;
 
-/**
- * Created by Austin on 1/17/2017.
- */
 public class FilenameComparator implements Comparator<ImageInfo> {
 
     private boolean descending = false;

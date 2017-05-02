@@ -11,7 +11,7 @@ public class ImageInfo {
     private Texture image;
     private ImageHistogram histogram;
     private File source;
-    private ArrayList<ImageTag> tags = new ArrayList<ImageTag>();
+    private final ArrayList<ImageTag> tags = new ArrayList<ImageTag>();
     private String md5;
 
     public ImageInfo(String filepath) {
@@ -59,8 +59,8 @@ public class ImageInfo {
 
     public boolean hasTags(ImageTag[] tagList) {
         boolean result = true;
-        for (int i = 0; i < tagList.length; i++) {
-            if (!tags.contains(tagList[i])) {
+        for (ImageTag tag : tagList) {
+            if (!tags.contains(tag)) {
                 result = false;
                 break;
             }

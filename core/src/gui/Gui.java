@@ -142,19 +142,19 @@ public abstract class Gui {
      */
     public static String drawTextInWidth(Batch batch, BitmapFont font, String text, float x, float y, float width) {
         String draw = text;
-        String remaining = "";
+        StringBuilder remaining = new StringBuilder();
         
         if (draw.contains("\n")) {
-            remaining = draw.substring(draw.indexOf("\n") + 1);
+            remaining = new StringBuilder(draw.substring(draw.indexOf("\n") + 1));
             draw = draw.substring(0, draw.indexOf("\n"));
         }
         
         while (getStringPixelWidth(font, draw) > width) {
             if (draw.contains(" ")) {
-                remaining = draw.substring(draw.lastIndexOf(" ")+1) + " " + remaining;
+                remaining.insert(0, draw.substring(draw.lastIndexOf(" ") + 1) + " ");
                 draw = draw.substring(0, draw.lastIndexOf(" "));
             } else {
-                remaining = draw.charAt(draw.length()-1) + remaining;
+                remaining.insert(0, draw.charAt(draw.length() - 1));
                 draw = draw.substring(0, draw.length()-1);
             }
         }
@@ -163,7 +163,7 @@ public abstract class Gui {
             font.draw(batch, draw, x, y);
         }
         
-        return remaining;
+        return remaining.toString();
     }
     
     /**

@@ -10,7 +10,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class ImageDatabase {
-    private ArrayList<ImageInfo> images = new ArrayList();
+
+    private final ArrayList<ImageInfo> images = new ArrayList<ImageInfo>();
 
     public ImageDatabase() {
     }
@@ -81,12 +82,12 @@ public class ImageDatabase {
         try {
             Scanner scan = new Scanner(file);
             
-            String jsonString = "";
+            StringBuilder jsonString = new StringBuilder();
             while (scan.hasNextLine()) {
-                jsonString += scan.nextLine();
+                jsonString.append(scan.nextLine());
             }
             
-            loadFromJSON(new JSONObject(jsonString));
+            loadFromJSON(new JSONObject(jsonString.toString()));
             
             scan.close();
             return true;
@@ -111,13 +112,13 @@ public class ImageDatabase {
     }
     
     public String toString() {
-        String result = "Image Database (" + images.size() + " images): ";
+        StringBuilder result = new StringBuilder("Image Database (" + images.size() + " images): ");
         
         for (ImageInfo img : images) {
-            result += "\n  " + img;
+            result.append("\n  ").append(img);
         }
         
-        return result;
+        return result.toString();
     }
 
 }

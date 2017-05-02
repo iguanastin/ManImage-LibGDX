@@ -12,9 +12,6 @@ import gui.Gui;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/**
- * Created by Austin on 1/17/2017.
- */
 public class BasicImageGrid extends Actor implements InputProcessor {
 
     private int scrollBarWidth = 20;

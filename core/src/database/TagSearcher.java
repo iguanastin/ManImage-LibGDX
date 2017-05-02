@@ -1,11 +1,8 @@
 package database;
 
-/**
- * Created by Austin on 1/17/2017.
- */
 public class TagSearcher implements DatabaseSearcher {
 
-    private ImageTag[] tags;
+    private final ImageTag[] tags;
 
 
     public TagSearcher(ImageTag ... tags) {
@@ -14,11 +11,7 @@ public class TagSearcher implements DatabaseSearcher {
 
     @Override
     public boolean isValid(ImageInfo info) {
-        if (info.hasTags(tags)) {
-             return true;
-        }
-
-        return false;
+        return info.hasTags(tags);
     }
 
 }

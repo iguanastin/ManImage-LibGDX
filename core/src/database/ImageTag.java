@@ -2,9 +2,6 @@ package database;
 
 import org.json.JSONObject;
 
-/**
- * Created by Austin on 1/17/2017.
- */
 public class ImageTag {
 
     public static final int DESCRIPTOR_TYPE = 0;
